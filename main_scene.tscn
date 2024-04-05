@@ -1,3 +1,7 @@
-[gd_scene format=3 uid="uid://d3cwqqwc6i43e"]
+[gd_scene load_steps=2 format=3 uid="uid://d3cwqqwc6i43e"]
+
+[ext_resource type="PackedScene" uid="uid://bj05gwsqe21ht" path="res://cinematic_scene.tscn" id="1_b0xtr"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." instance=ExtResource("1_b0xtr")]
