@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3at1e7bx6ihk"
-path="res://.godot/imported/enemyWalking_1.png-5af6eedbe61b701677d490ffdc1e6471.ctex"
+uid="uid://by6ckuvpl4bkd"
+path="res://.godot/imported/tile_sprite.png-07a6bb4e2c4e98570e4268baa6ff2646.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemyWalking_1.png"
-dest_files=["res://.godot/imported/enemyWalking_1.png-5af6eedbe61b701677d490ffdc1e6471.ctex"]
+source_file="res://tile_sprite.png"
+dest_files=["res://.godot/imported/tile_sprite.png-07a6bb4e2c4e98570e4268baa6ff2646.ctex"]
 
 [params]
 
