@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://d3cwqqwc6i43e"]
 
-[ext_resource type="TileSet" uid="uid://dh5x6t7vaq0o3" path="res://tileset_map.tres" id="1_sj8sn"]
+[ext_resource type="TileSet" uid="uid://qiinfntp3p6n" path="res://tileset_map.tres" id="1_sj8sn"]
 [ext_resource type="Script" path="res://player.gd" id="2_21haa"]
 [ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_rhtjt"]
 

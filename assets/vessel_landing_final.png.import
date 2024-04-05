@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cinkerib0qap"
-path="res://.godot/imported/vessel_landing_final.png-68c124ecf72bb0387f0128c8db04e6a1.ctex"
+path="res://.godot/imported/vessel_landing_final.png-6d89c3e34d796221a98df941935390d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://vessel_landing_final.png"
-dest_files=["res://.godot/imported/vessel_landing_final.png-68c124ecf72bb0387f0128c8db04e6a1.ctex"]
+source_file="res://assets/vessel_landing_final.png"
+dest_files=["res://.godot/imported/vessel_landing_final.png-6d89c3e34d796221a98df941935390d6.ctex"]
 
 [params]
 

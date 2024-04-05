@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://bj05gwsqe21ht"]
 
 [ext_resource type="AudioStream" uid="uid://bc4ydgwpqkimd" path="res://Kids.mp3" id="1_y12xa"]
-[ext_resource type="Texture2D" uid="uid://cinkerib0qap" path="res://vessel_landing_final.png" id="2_yxc5i"]
+[ext_resource type="Texture2D" uid="uid://cinkerib0qap" path="res://assets/vessel_landing_final.png" id="2_yxc5i"]
 [ext_resource type="Script" path="res://cinematic.gd" id="3_e7avh"]
 [ext_resource type="Script" path="res://textAnimation.gd" id="4_87k6n"]
 
