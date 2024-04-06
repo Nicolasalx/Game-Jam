@@ -155,3 +155,6 @@ animation = &"left"
 texture_filter = 1
 position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_p8wne")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true

@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhft8pwyv6n3k"]
+
+[ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
+[ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
+[ext_resource type="Texture2D" uid="uid://dvmwsy1lcit1u" path="res://assets/water_icon.png" id="3_o4wti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sco5i"]
+size = Vector2(145, 121)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1aa0g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1ej"]
+bg_color = Color(0, 0.521569, 0.776471, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3ibux")
+
+[node name="WaterGenerator" type="Sprite2D" parent="."]
+texture = ExtResource("1_i8ddh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_sco5i")
+
+[node name="InteractionText" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = 40.0
+offset_right = 127.0
+offset_bottom = 90.0
+grow_horizontal = 2
+text = "Press f to interacte"
+
+[node name="GeneratorPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 75.0
+offset_top = -73.0
+offset_right = 308.0
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CheckButton" type="CheckButton" parent="GeneratorPanel"]
+layout_mode = 0
+offset_left = 170.0
+offset_top = 20.0
+offset_right = 214.0
+offset_bottom = 44.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="GeneratorPanel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 18.0
+offset_right = 162.0
+offset_bottom = 44.0
+text = "Water extraction"
+
+[node name="WaterIcon" type="Sprite2D" parent="GeneratorPanel"]
+position = Vector2(213, 101)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_o4wti")
+
+[node name="MiningBar" type="ProgressBar" parent="GeneratorPanel/WaterIcon"]
+offset_left = -490.0
+offset_top = -25.0
+offset_right = -53.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxFlat_1aa0g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lq1ej")
+value = 50.0
+
+[node name="WaterIcon" type="Sprite2D" parent="."]
+position = Vector2(65.9999, -69)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("3_o4wti")
+
+[node name="MiningBar" type="ProgressBar" parent="WaterIcon"]
+modulate = Color(1, 1, 1, 0.862745)
+offset_left = -490.0
+offset_top = -25.0
+offset_right = -53.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxFlat_1aa0g")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lq1ej")
+value = 50.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="button_down" from="GeneratorPanel/CheckButton" to="." method="_on_check_button_button_down"]
+[connection signal="button_up" from="GeneratorPanel/CheckButton" to="." method="_on_check_button_button_up"]
