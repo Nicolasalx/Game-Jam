@@ -1,10 +1,8 @@
 extends Area2D
 
 @export var speed = 200
-var screen_size
 
 func _ready():
-	screen_size = get_viewport_rect().size
 	$AnimatedSprite2D.scale = Vector2(0.5, 0.5)
 	
 func _process(delta):
@@ -25,7 +23,6 @@ func _process(delta):
 		$AnimatedSprite2D.stop()
 		
 	position += velocity * delta
-	position = position.clamp(Vector2.ZERO, screen_size)
 
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "right" if velocity.x > 0 else "left"

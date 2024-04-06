@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main.gd" id="1_7jk7t"]
 [ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="4_bdok7"]
 [ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="4_oyoe5"]
-[ext_resource type="PackedScene" uid="uid://vs2bmkufahl0" path="res://scenes/aliens.tscn" id="5_k2i7h"]
+[ext_resource type="PackedScene" path="res://scenes/aliens.tscn" id="5_k2i7h"]
 
 [sub_resource type="Curve2D" id="Curve2D_cs4b3"]
 _data = {
@@ -21,6 +21,7 @@ curve = SubResource("Curve2D_cs4b3")
 position = Vector2(-96, -96)
 
 [node name="Map" parent="." instance=ExtResource("4_bdok7")]
+position = Vector2(-1250, -317)
 
 [node name="Player" parent="." instance=ExtResource("4_oyoe5")]
 
