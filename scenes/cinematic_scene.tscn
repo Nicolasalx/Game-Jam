@@ -1,0 +1,322 @@
+[gd_scene load_steps=14 format=3 uid="uid://bj05gwsqe21ht"]
+
+[ext_resource type="AudioStream" uid="uid://bc4ydgwpqkimd" path="res://Kids.mp3" id="1_8j6qi"]
+[ext_resource type="Texture2D" uid="uid://cinkerib0qap" path="res://assets/vessel_landing_final.png" id="2_28vyf"]
+[ext_resource type="Script" path="res://cinematic.gd" id="3_ffflt"]
+[ext_resource type="Script" path="res://textAnimation.gd" id="4_ilmb3"]
+
+[sub_resource type="Animation" id="Animation_jau22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_oj2cf"]
+resource_name = "run"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 2.4, 4.1, 7, 8.7, 11.3, 13, 15.8, 17.5, 20.3),
+"transitions": PackedFloat32Array(1, 1, 21.8566, 21.8566, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv2tu"]
+_data = {
+"RESET": SubResource("Animation_jau22"),
+"run": SubResource("Animation_oj2cf")
+}
+
+[sub_resource type="GDScript" id="GDScript_qvt5y"]
+script/source = "extends AnimationPlayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_2ogx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Text5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w8gdj"]
+resource_name = "textAnimation"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 4.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 4.1, 8.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 8.4, 13.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text4:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 13.1, 17.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Text5:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 17.5, 30),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mseyt"]
+_data = {
+"RESET": SubResource("Animation_2ogx7"),
+"textAnimation": SubResource("Animation_w8gdj")
+}
+
+[sub_resource type="GDScript" id="GDScript_e5cjv"]
+script/source = "extends AnimationPlayer
+
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_2m2my"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_8j6qi")
+autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(957.451, 535)
+scale = Vector2(1.07006, 1.22851)
+texture = ExtResource("2_28vyf")
+hframes = 5
+frame = 2
+script = ExtResource("3_ffflt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_qv2tu")
+}
+script = SubResource("GDScript_qvt5y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("4_ilmb3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../Text1")
+libraries = {
+"": SubResource("AnimationLibrary_mseyt")
+}
+script = SubResource("GDScript_e5cjv")
+
+[node name="Text1" type="MarginContainer" parent="Sprite2D"]
+offset_left = -139.0
+offset_top = 849.0
+offset_right = 2276.0
+offset_bottom = 1079.0
+scale = Vector2(0.913257, 0.905644)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_2m2my")
+
+[node name="Label" type="Label" parent="Sprite2D/Text1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Le vaisseau survole la planète X, révélant des paysages éblouissants de cristaux étincelants et de vallées profondes couvertes d'une végétation luxuriante aux teintes chatoyantes."
+uppercase = true
+
+[node name="Text2" type="MarginContainer" parent="Sprite2D"]
+visible = false
+offset_left = -76.0
+offset_top = 818.0
+offset_right = 2010.0
+offset_bottom = 1065.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_2m2my")
+
+[node name="Label" type="Label" parent="Sprite2D/Text2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Le vaisseau se pose en douceur sur le sol rocailleux de la planète, émettant un léger sifflement alors que ses rétrofusées s'éteignent progressivement."
+uppercase = true
+
+[node name="Text3" type="MarginContainer" parent="Sprite2D"]
+offset_left = -167.0
+offset_top = 816.0
+offset_right = 2277.0
+offset_bottom = 1063.0
+scale = Vector2(0.923124, 1.00227)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_2m2my")
+
+[node name="Label" type="Label" parent="Sprite2D/Text3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Le vaisseau éteint son moteur dans un silence inquiétant, laissant les explorateurs seuls avec les bruits étranges de la planète X, amplifiant leur sentiment d'isolement et d'étrangeté."
+uppercase = true
+
+[node name="Text4" type="MarginContainer" parent="Sprite2D"]
+offset_left = 155.0
+offset_top = 854.0
+offset_right = 2656.0
+offset_bottom = 1101.0
+scale = Vector2(0.687738, 0.837325)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_2m2my")
+
+[node name="Label" type="Label" parent="Sprite2D/Text4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Les explorateurs descendent prudemment du vaisseau, scrutant l'horizon avec curiosité et appréhension, alors que des formes étranges commencent à émerger des ombres environnantes."
+uppercase = true
+
+[node name="Text5" type="MarginContainer" parent="Sprite2D"]
+offset_left = 27.0
+offset_top = 813.0
+offset_right = 2831.0
+offset_bottom = 1060.0
+scale = Vector2(0.708548, 1.02233)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_2m2my")
+
+[node name="Label" type="Label" parent="Sprite2D/Text5"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Les explorateurs, armés de leur équipement, s'aventurent courageusement dans les paysages mystérieux de la planète X, impatients de découvrir ses secrets 
+
+cachés malgré la tension persistante avec les autochtones."
+uppercase = true
