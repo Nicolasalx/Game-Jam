@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
 [ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="2_ev775"]
-[ext_resource type="PackedScene" uid="uid://vs2bmkufahl0" path="res://scenes/aliens.tscn" id="3_7r56f"]
+[ext_resource type="PackedScene" path="res://scenes/aliens.tscn" id="3_7r56f"]
 
 [sub_resource type="Curve2D" id="Curve2D_2vcf7"]
 _data = {
