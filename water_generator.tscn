@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwk10gc258n7n"]
+[gd_scene load_steps=11 format=3 uid="uid://bhft8pwyv6n3k"]
 
 [ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
 [ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
@@ -7,10 +7,22 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sco5i"]
 size = Vector2(145, 121)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n5bcs"]
+bg_color = Color(0.686275, 0.592157, 1, 0.427451)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1aa0g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1ej"]
 bg_color = Color(0, 0.521569, 0.776471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nuak"]
+bg_color = Color(0.505882, 0.505882, 0.505882, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x36n5"]
+bg_color = Color(0.347817, 0.347817, 0.347817, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hp6hy"]
+bg_color = Color(0.211765, 0.211765, 0.211765, 1)
 
 [node name="Node2D4" type="Node2D"]
 script = ExtResource("1_3ibux")
@@ -46,6 +58,7 @@ offset_right = 308.0
 offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_n5bcs")
 
 [node name="CheckButton" type="CheckButton" parent="GeneratorPanel"]
 layout_mode = 0
@@ -62,12 +75,6 @@ offset_right = 162.0
 offset_bottom = 44.0
 text = "Water extraction"
 
-[node name="getWaterLabel" type="RichTextLabel" parent="GeneratorPanel"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-text = "Drink water"
-
 [node name="WaterIcon" type="Sprite2D" parent="GeneratorPanel"]
 position = Vector2(213, 101)
 scale = Vector2(0.4, 0.4)
@@ -75,13 +82,38 @@ texture = ExtResource("3_o4wti")
 
 [node name="MiningBar" type="ProgressBar" parent="GeneratorPanel/WaterIcon"]
 offset_left = -490.0
-offset_top = -25.0
+offset_top = -32.5
 offset_right = -53.0
-offset_bottom = 45.0
+offset_bottom = 37.5
 theme_override_font_sizes/font_size = 40
 theme_override_styles/background = SubResource("StyleBoxFlat_1aa0g")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lq1ej")
 value = 50.0
+
+[node name="Button" type="Button" parent="GeneratorPanel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 52.0
+offset_right = 110.0
+offset_bottom = 77.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4nuak")
+theme_override_styles/hover = SubResource("StyleBoxFlat_x36n5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hp6hy")
+
+[node name="getWaterLabel" type="RichTextLabel" parent="GeneratorPanel/Button"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 155.0
+offset_bottom = 27.0
+text = "Get water"
+
+[node name="NbWater" type="RichTextLabel" parent="GeneratorPanel"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 52.0
+offset_right = 160.0
+offset_bottom = 92.0
+text = "10"
 
 [node name="WaterIcon" type="Sprite2D" parent="."]
 position = Vector2(65.9999, -69)
@@ -91,9 +123,9 @@ texture = ExtResource("3_o4wti")
 [node name="MiningBar" type="ProgressBar" parent="WaterIcon"]
 modulate = Color(1, 1, 1, 0.862745)
 offset_left = -490.0
-offset_top = -25.0
+offset_top = -29.0
 offset_right = -53.0
-offset_bottom = 45.0
+offset_bottom = 41.0
 theme_override_font_sizes/font_size = 40
 theme_override_styles/background = SubResource("StyleBoxFlat_1aa0g")
 theme_override_styles/fill = SubResource("StyleBoxFlat_lq1ej")
@@ -102,3 +134,4 @@ value = 50.0
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
 [connection signal="toggled" from="GeneratorPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="GeneratorPanel/Button" to="." method="_on_button_pressed"]
