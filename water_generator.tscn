@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhft8pwyv6n3k"]
+[gd_scene load_steps=7 format=3 uid="uid://dwk10gc258n7n"]
 
 [ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
 [ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
@@ -32,7 +32,7 @@ offset_top = 40.0
 offset_right = 127.0
 offset_bottom = 90.0
 grow_horizontal = 2
-text = "Press f to interacte"
+text = "Press f to interact"
 
 [node name="GeneratorPanel" type="Panel" parent="."]
 anchors_preset = 8
@@ -61,6 +61,12 @@ offset_top = 18.0
 offset_right = 162.0
 offset_bottom = 44.0
 text = "Water extraction"
+
+[node name="getWaterLabel" type="RichTextLabel" parent="GeneratorPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "get Water Label"
 
 [node name="WaterIcon" type="Sprite2D" parent="GeneratorPanel"]
 position = Vector2(213, 101)
