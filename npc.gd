@@ -18,7 +18,6 @@ func _ready():
 	
 	current_state = "walking"
 	set_process_input(true)
-	update_interaction_text()  # Update the interaction text initially
 
 func _process(delta):
 	if current_state == "walking":
@@ -58,10 +57,12 @@ func _input(event):
 			if my_global.nb_tomato >= 5:
 				my_global.nb_tomato -= 5
 				my_global.mission = 1
+				print("c'est bon")
 		elif my_global.mission == 1:
-			if my_global.nb_water >= 10:
-				my_global.nb_water -= 10
+			if my_global.nb_goute_deau >= 10:
+				my_global.nb_goute_deau -= 10
 				my_global.mission = 2
+				print("c'est bon 2")
 
 func _on_area_2d_area_entered(area):
 	match my_global.mission:
