@@ -99,12 +99,6 @@ offset_bottom = 77.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_4nuak")
 theme_override_styles/hover = SubResource("StyleBoxFlat_x36n5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hp6hy")
-
-[node name="getWaterLabel" type="RichTextLabel" parent="GeneratorPanel/Button"]
-layout_mode = 0
-offset_left = 5.0
-offset_right = 155.0
-offset_bottom = 27.0
 text = "Get water"
 
 [node name="NbWater" type="RichTextLabel" parent="GeneratorPanel"]
