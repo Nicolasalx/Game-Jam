@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhft8pwyv6n3k"]
+[gd_scene load_steps=7 format=3 uid="uid://dwk10gc258n7n"]
 
 [ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
 [ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
@@ -12,7 +12,7 @@ size = Vector2(145, 121)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1ej"]
 bg_color = Color(0, 0.521569, 0.776471, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_3ibux")
 
 [node name="WaterGenerator" type="Sprite2D" parent="."]

@@ -1,0 +1,180 @@
+[gd_scene load_steps=22 format=3 uid="uid://dvi361057dogf"]
+
+[ext_resource type="Script" path="res://npc.gd" id="1_yisei"]
+[ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_36nb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awmu5"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcsl5"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(256, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sen4k"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(512, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5k57"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(768, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdxv6"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fugda"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(0, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kqdb"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(256, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyakx"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(512, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd6r0"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(768, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg5p8"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(0, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfvrj"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(256, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55ci6"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(512, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnvkl"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(768, 768, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmm6s"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sna4"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ld0w"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rtky"]
+atlas = ExtResource("2_36nb4")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_df55l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_awmu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcsl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sen4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5k57")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdxv6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fugda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kqdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyakx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd6r0")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg5p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yfvrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55ci6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnvkl")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmm6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sna4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ld0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5rtky")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11hmu"]
+radius = 48.0
+height = 208.0
+
+[node name="npc" type="CharacterBody2D"]
+script = ExtResource("1_yisei")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_df55l")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_11hmu")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="InteractionText" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 224.0
+offset_bottom = 10.0
+grow_horizontal = 2
+text = "Donne-moi 5 goutes d'eau"
+metadata/_edit_use_anchors_ = true

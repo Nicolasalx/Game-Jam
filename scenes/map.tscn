@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://csdrqq28sdpot"]
+[gd_scene load_steps=5 format=3 uid="uid://6xfn71l5ecpl"]
 
 [ext_resource type="TileSet" uid="uid://dh5x6t7vaq0o3" path="res://tileset_map.tres" id="1_guqxj"]
-[ext_resource type="PackedScene" uid="uid://bhft8pwyv6n3k" path="res://water_generator.tscn" id="2_0ndii"]
+[ext_resource type="PackedScene" uid="uid://dwk10gc258n7n" path="res://water_generator.tscn" id="2_0ndii"]
 [ext_resource type="Texture2D" uid="uid://vi86y4fyfra" path="res://assets/crashed_spaceship.png" id="2_6urro"]
+[ext_resource type="PackedScene" uid="uid://dvi361057dogf" path="res://npc.tscn" id="4_v7cdb"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,3 +18,5 @@ texture = ExtResource("2_6urro")
 
 [node name="WaterExtractor" parent="." instance=ExtResource("2_0ndii")]
 position = Vector2(-1417, -1403)
+
+[node name="npc" parent="." instance=ExtResource("4_v7cdb")]
