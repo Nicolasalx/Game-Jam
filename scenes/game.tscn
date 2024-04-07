@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bll3necfs66r3"]
+[gd_scene load_steps=7 format=3 uid="uid://bll3necfs66r3"]
 
 [ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
 [ext_resource type="PackedScene" uid="uid://ceinrvjdh7ke3" path="res://scenes/player.tscn" id="2_ev775"]
 [ext_resource type="PackedScene" uid="uid://bm1avs30idwg4" path="res://scripts/hoppy.tscn" id="3_m8d4b"]
 [ext_resource type="PackedScene" uid="uid://dwk10gc258n7n" path="res://water_generator.tscn" id="4_trgie"]
 [ext_resource type="PackedScene" uid="uid://dvi361057dogf" path="res://npc.tscn" id="5_8crjy"]
+[ext_resource type="PackedScene" uid="uid://bjndq3l18kgd8" path="res://scenes/hud.tscn" id="6_g7a4b"]
 
 [node name="game" type="Node2D"]
 
@@ -17,3 +18,5 @@
 [node name="npc" parent="." instance=ExtResource("5_8crjy")]
 
 [node name="Player" parent="." instance=ExtResource("2_ev775")]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("6_g7a4b")]
