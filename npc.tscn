@@ -162,7 +162,7 @@ autostart = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_df55l")
-animation = &"idle"
+animation = &"right"
 
 [node name="Area2D" type="Area2D" parent="."]
 

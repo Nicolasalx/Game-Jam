@@ -67,7 +67,7 @@ func _input(event):
 				my_global.mission = 2
 				print("c'est bon 2")
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	match my_global.mission:
 		0:
 			interaction_text1.visible = true
@@ -83,7 +83,7 @@ func _on_area_2d_area_entered(area):
 			interaction_text3.visible = true
 			get_tree().change_scene_to_packed(end_cinematic)
 
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_exited(_area):
 	interaction_text1.visible = false
 	interaction_text2.visible = false
 	interaction_text3.visible = false

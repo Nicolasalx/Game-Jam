@@ -8,10 +8,11 @@ func _ready():
 func _process(delta):
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("sprint"):
-		print("test")
 		speed = 350
 	else:
 		speed = 200
+	if my_global.nb_water <= 0:
+		speed = 50
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -25,9 +26,10 @@ func _process(delta):
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
-		
-	position += velocity * delta
+	
 
+	position += velocity * delta
+	
 	if velocity.x != 0:
 		$AnimatedSprite2D.animation = "right" if velocity.x > 0 else "left"
 	elif velocity.y != 0:

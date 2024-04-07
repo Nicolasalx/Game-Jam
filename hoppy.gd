@@ -3,7 +3,6 @@ extends CharacterBody2D
 var speed = 1
 var current_state = "walking"
 var direction = Vector2.RIGHT
-@onready var interaction_text = $InteractionText
 
 func _ready():
 	position = Vector2(-800, 0)
@@ -20,7 +19,7 @@ func move_right():
 			direction = Vector2.RIGHT
 			$AnimatedSprite2D.flip_h = false
 
-func _process(delta):
+func _process(_delta):
 	move_right()
 
 	if direction == Vector2.LEFT:
@@ -29,9 +28,9 @@ func _process(delta):
 		speed = 1
 
 
-func _on_area_2d_area_entered(area):
+func _on_area_2d_area_entered(_area):
 	pass # Replace with function body.
 
 
-func _on_area_2d_area_exited(area):
+func _on_area_2d_area_exited(_area):
 	pass # Replace with function body.

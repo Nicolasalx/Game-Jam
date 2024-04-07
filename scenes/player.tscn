@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://ceinrvjdh7ke3"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_6tj5v"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_oxghj"]
 [ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_lehcr"]
 [ext_resource type="Script" path="res://scenes/health_bar.gd" id="3_4piku"]
 
@@ -151,16 +151,18 @@ bg_color = Color(0, 0.384314, 0.788235, 1)
 radius = 55.0
 height = 204.0
 
-[node name="Player" type="Area2D"]
-script = ExtResource("1_6tj5v")
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_oxghj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Player" type="Area2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 texture_filter = 1
 position = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_im6rx")
 animation = &"left"
 
-[node name="HealthBar" type="ProgressBar" parent="AnimatedSprite2D"]
+[node name="HealthBar" type="ProgressBar" parent="Player/AnimatedSprite2D"]
 z_index = 1
 offset_left = -106.0
 offset_top = -129.0
@@ -172,7 +174,7 @@ value = 100.0
 show_percentage = false
 script = ExtResource("3_4piku")
 
-[node name="FillBar" type="ProgressBar" parent="AnimatedSprite2D/HealthBar"]
+[node name="FillBar" type="ProgressBar" parent="Player/AnimatedSprite2D/HealthBar"]
 z_index = -1
 layout_mode = 1
 anchors_preset = 15
@@ -188,13 +190,18 @@ theme_override_styles/background = SubResource("StyleBoxFlat_fsqbk")
 value = 100.0
 show_percentage = false
 
-[node name="Timer" type="Timer" parent="AnimatedSprite2D/HealthBar"]
+[node name="Timer" type="Timer" parent="Player/AnimatedSprite2D/HealthBar"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 texture_filter = 1
 position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_p8wne")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+texture_filter = 1
+position = Vector2(-6, 0)
+shape = SubResource("CapsuleShape2D_p8wne")

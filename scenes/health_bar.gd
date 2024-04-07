@@ -1,7 +1,5 @@
 extends ProgressBar
 
-@onready var healthBar = $HealthBar
-
 var time_passed: float = 0
 var update_interval: float = 30.0
 
