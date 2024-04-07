@@ -25,7 +25,7 @@ func _process(_delta):
 		progresse_bar.value += 0.05
 		if progresse_bar.value >= 100:
 			progresse_bar.value = 0
-			available_water += 1
+			available_water += 10
 			text_nb_water.text = str(available_water)
 	progresse_bar_extern.value = progresse_bar.value
 	progresse_bar_extern.get_parent().visible = generate_water
