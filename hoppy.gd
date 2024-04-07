@@ -6,17 +6,17 @@ var direction = Vector2.RIGHT
 @onready var interaction_text = $InteractionText
 
 func _ready():
-	position = Vector2(200, 200)
+	position = Vector2(-800, 0)
 	$AnimatedSprite2D.scale = Vector2(5, 5)
 
 func move_right():
 	if current_state == "walking":
 		$AnimatedSprite2D.play("right")
 		position.x += speed
-		if position.x >= 500 and direction == Vector2.RIGHT:
+		if position.x >= -200 and direction == Vector2.RIGHT:
 			direction = Vector2.LEFT
 			$AnimatedSprite2D.flip_h = true
-		elif position.x <= 200 and direction == Vector2.LEFT:
+		elif position.x <= -800 and direction == Vector2.LEFT:
 			direction = Vector2.RIGHT
 			$AnimatedSprite2D.flip_h = false
 
