@@ -1,10 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bomfbx18cug0x"]
+[gd_scene load_steps=6 format=3 uid="uid://bll3necfs66r3"]
 
-[ext_resource type="PackedScene" uid="uid://c63lgbj8oxwcs" path="res://scenes/map.tscn" id="1_1ueeq"]
-[ext_resource type="PackedScene" uid="uid://ceinrvjdh7ke3" path="res://scenes/player.tscn" id="2_ev775"]
+[ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
+[ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="2_ev775"]
 [ext_resource type="PackedScene" uid="uid://bm1avs30idwg4" path="res://scripts/hoppy.tscn" id="3_m8d4b"]
-[ext_resource type="PackedScene" uid="uid://cc81de5qxjgwh" path="res://npc.tscn" id="5_8crjy"]
-[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="6_g7a4b"]
+[ext_resource type="PackedScene" uid="uid://ddi1ahpy3j0cf" path="res://npc.tscn" id="5_8crjy"]
+[ext_resource type="PackedScene" uid="uid://bjndq3l18kgd8" path="res://scenes/hud.tscn" id="6_g7a4b"]
 
 [node name="game" type="Node2D"]
 

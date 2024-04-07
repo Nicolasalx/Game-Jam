@@ -1,11 +1,14 @@
 extends CharacterBody2D
 
+@onready var end_cinematic = preload("res://cinematic_end.tscn") as PackedScene
+
 var target_positions = [Vector2(0, 0), Vector2(700, 600)]
 var current_target_index = 0
 var current_state = "idle"
 @onready var interaction_text1 = $InteractionText
 @onready var interaction_text2 = $InteractionText2
 @onready var interaction_text3 = $InteractionText3
+
 
 var speed = 200
 
@@ -78,6 +81,7 @@ func _on_area_2d_area_entered(area):
 			interaction_text1.visible = false
 			interaction_text2.visible = false
 			interaction_text3.visible = true
+			get_tree().change_scene_to_packed(end_cinematic)
 
 func _on_area_2d_area_exited(area):
 	interaction_text1.visible = false
