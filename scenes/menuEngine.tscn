@@ -46,17 +46,17 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Separator"]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 138.0
-offset_right = 1302.0
-offset_bottom = 303.0
+offset_left = 297.0
+offset_top = 147.0
+offset_right = 1608.0
+offset_bottom = 312.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 12
 theme_override_constants/shadow_offset_y = 12
 theme_override_constants/outline_size = 24
 theme_override_fonts/font = SubResource("SystemFont_0fon6")
 theme_override_font_sizes/font_size = 120
-text = "GAME TITLE"
+text = "GALACTIC DISCOVERY"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2

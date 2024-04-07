@@ -1,0 +1,244 @@
+[gd_scene load_steps=15 format=3 uid="uid://beoums04k1lad"]
+
+[ext_resource type="Script" path="res://cinematicEnd.gd" id="1_hn48u"]
+[ext_resource type="AudioStream" uid="uid://cis0fku7126aa" path="res://Push_It_To_The_Limit_scarface.mp3" id="2_actqp"]
+[ext_resource type="Texture2D" uid="uid://cqajo736bdyfr" path="res://assets/lastlastCinematicEnd.png" id="2_b0dun"]
+[ext_resource type="Script" path="res://cinematicEndRun.gd" id="4_wxwqy"]
+[ext_resource type="Script" path="res://cinematicEndTextAnimation.gd" id="5_rrbmp"]
+
+[sub_resource type="Animation" id="Animation_jau22"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_oj2cf"]
+resource_name = "run"
+length = 32.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.2, 9, 11.1, 18.1, 19.5, 29.8),
+"transitions": PackedFloat32Array(1, 1, 21.8566, 21.8566, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv2tu"]
+_data = {
+"RESET": SubResource("Animation_jau22"),
+"run": SubResource("Animation_oj2cf")
+}
+
+[sub_resource type="GDScript" id="GDScript_betah"]
+script/source = "extends AnimationPlayer
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="Animation" id="Animation_2ogx7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../END2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../END3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w8gdj"]
+resource_name = "textAnimationEnd"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 11),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../END2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 11, 20.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../END3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 19.9, 20.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [false, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mseyt"]
+_data = {
+"RESET": SubResource("Animation_2ogx7"),
+"textAnimationEnd": SubResource("Animation_w8gdj")
+}
+
+[sub_resource type="GDScript" id="GDScript_l5hmd"]
+script/source = "extends AnimationPlayer
+
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_iqlub"]
+
+[node name="CinematicEnd" type="Node2D"]
+script = ExtResource("1_hn48u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_actqp")
+autoplay = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(958.976, 535.802)
+scale = Vector2(1.01047, 0.992959)
+texture = ExtResource("2_b0dun")
+hframes = 3
+frame = 2
+script = ExtResource("4_wxwqy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_qv2tu")
+}
+script = SubResource("GDScript_betah")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+script = ExtResource("5_rrbmp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+root_node = NodePath("../END1")
+libraries = {
+"": SubResource("AnimationLibrary_mseyt")
+}
+script = SubResource("GDScript_l5hmd")
+
+[node name="END1" type="MarginContainer" parent="Sprite2D"]
+visible = false
+offset_left = 248.0
+offset_top = 833.0
+offset_right = 2733.0
+offset_bottom = 1063.0
+scale = Vector2(0.913257, 0.905644)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_iqlub")
+
+[node name="Label" type="Label" parent="Sprite2D/END1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Les zorburiens vous acceptent dans leur civilisation et vous pouvez cohabiter avec eux"
+uppercase = true
+
+[node name="END2" type="MarginContainer" parent="Sprite2D"]
+visible = false
+offset_left = 92.0
+offset_top = 820.0
+offset_right = 2632.0
+offset_bottom = 1067.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_iqlub")
+
+[node name="Label" type="Label" parent="Sprite2D/END2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Votre équipage s'installe et découvre de nouvelles technologies, vous trouvez du détérium et du tricium."
+uppercase = true
+
+[node name="END3" type="MarginContainer" parent="Sprite2D"]
+offset_left = 221.0
+offset_top = 828.0
+offset_right = 2665.0
+offset_bottom = 1075.0
+scale = Vector2(0.923124, 1.00227)
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_right = 200
+script = SubResource("GDScript_iqlub")
+
+[node name="Label" type="Label" parent="Sprite2D/END3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "Après avoir trouver ces deux ressources vous créer une nouvelle ville pour vous et les zorburiens.
+"
+uppercase = true
+
+[node name="Timer" type="Timer" parent="."]

@@ -4,7 +4,7 @@ extends Node2D
 
 func _ready():
 	pass
-
+	
 func _process(delta) -> void:
-	await get_tree().create_timer(26.5).timeout
+	await get_tree().create_timer(25).timeout
 	get_tree().change_scene_to_packed(start_level)

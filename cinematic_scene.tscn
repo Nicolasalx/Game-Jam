@@ -248,7 +248,7 @@ script = SubResource("GDScript_2m2my")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Le vaisseau survole la planète X, révélant des paysages éblouissants de cristaux étincelants et de vallées profondes couvertes d'une végétation luxuriante aux teintes chatoyantes."
+text = "Le vaisseau survole la planète Zorbor, révélant des paysages éblouissants de cristaux étincelants et de vallées profondes couvertes d'une végétation luxuriante aux teintes chatoyantes."
 uppercase = true
 
 [node name="Text2" type="MarginContainer" parent="Sprite2D"]
@@ -282,31 +282,31 @@ script = SubResource("GDScript_2m2my")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Le vaisseau éteint son moteur dans un silence inquiétant, laissant les explorateurs seuls avec les bruits étranges de la planète X, amplifiant leur sentiment d'isolement et d'étrangeté."
+text = "Le vaisseau éteint son moteur dans un silence inquiétant, laissant les explorateurs seuls avec les bruits étranges de la planète Zorbor, amplifiant leur sentiment d'isolement et d'étrangeté."
 uppercase = true
 
 [node name="Text4" type="MarginContainer" parent="Sprite2D"]
-offset_left = 155.0
-offset_top = 854.0
-offset_right = 2656.0
-offset_bottom = 1101.0
+offset_left = -10.0
+offset_top = 755.0
+offset_right = 2731.0
+offset_bottom = 1120.0
 scale = Vector2(0.687738, 0.837325)
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
 script = SubResource("GDScript_2m2my")
 
-[node name="Label" type="Label" parent="Sprite2D/Text4"]
+[node name="Label2" type="Label" parent="Sprite2D/Text4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
 text = "Les explorateurs descendent prudemment du vaisseau, scrutant l'horizon avec curiosité et appréhension, alors que des formes étranges commencent à émerger des ombres environnantes."
 uppercase = true
 
 [node name="Text5" type="MarginContainer" parent="Sprite2D"]
-offset_left = 27.0
-offset_top = 813.0
-offset_right = 2831.0
-offset_bottom = 1060.0
+offset_left = 30.0
+offset_top = 680.0
+offset_right = 2834.0
+offset_bottom = 927.0
 scale = Vector2(0.708548, 1.02233)
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
@@ -316,7 +316,7 @@ script = SubResource("GDScript_2m2my")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Les explorateurs, armés de leur équipement, s'aventurent courageusement dans les paysages mystérieux de la planète X, impatients de découvrir ses secrets 
+text = "Les explorateurs, armés de leur équipement, s'aventurent courageusement dans les paysages mystérieux de la planète Zorbor, impatients de découvrir ses secrets 
 
 cachés malgré la tension persistante avec les autochtones."
 uppercase = true

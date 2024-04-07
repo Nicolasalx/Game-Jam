@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bj05gwsqe21ht"]
+[gd_scene load_steps=17 format=3 uid="uid://bj05gwsqe21ht"]
 
 [ext_resource type="Script" path="res://scenes/cinematic_redirect.gd" id="1_4q56x"]
 [ext_resource type="AudioStream" uid="uid://bc4ydgwpqkimd" path="res://Kids.mp3" id="1_8j6qi"]
@@ -32,8 +32,24 @@ tracks/0/path = NodePath("Sprite2D2:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.7, 4.3, 5, 9.8, 10.5, 14.8, 15.5, 19.8, 20.5, 24.8),
-"transitions": PackedFloat32Array(1, 1, 21.8566, 21.8566, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(-0.2, 9, 11.1, 18.1, 19.5, 29.8),
+"transitions": PackedFloat32Array(1, 1, 21.8566, 21.8566, 1, 1),
+"update": 1,
+"values": [0, 0, 1, 1, 2, 2]
+}
+
+[sub_resource type="Animation" id="Animation_v1x27"]
+resource_name = "runStart"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.2, 5.9, 8.2, 11, 13.3, 16.1, 18.1, 21, 23.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 0, 1, 1, 2, 2, 3, 3, 4, 4]
 }
@@ -41,7 +57,8 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qv2tu"]
 _data = {
 "RESET": SubResource("Animation_jau22"),
-"run": SubResource("Animation_oj2cf")
+"run": SubResource("Animation_oj2cf"),
+"runStart": SubResource("Animation_v1x27")
 }
 
 [sub_resource type="GDScript" id="GDScript_qvt5y"]
@@ -66,7 +83,7 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5.8),
+"times": PackedFloat32Array(0, 3.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -78,10 +95,10 @@ tracks/1/path = NodePath("../Text2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 11.8),
+"times": PackedFloat32Array(3.8, 7.7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true]
+"values": [true, false]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -90,10 +107,10 @@ tracks/2/path = NodePath("../Text3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 13.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -102,10 +119,10 @@ tracks/3/path = NodePath("../Text4:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 15.6),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false, true]
+"values": [false]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -114,13 +131,53 @@ tracks/4/path = NodePath("../Text5:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 20.8),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_w8gdj"]
+resource_name = "textAnimationEnd"
+length = 30.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2/Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10.8, 21.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3/Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 21.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_w8gdj"]
+[sub_resource type="Animation" id="Animation_10676"]
 resource_name = "textAnimation"
 length = 30.0
 tracks/0/type = "value"
@@ -130,7 +187,7 @@ tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.1, 4.9),
+"times": PackedFloat32Array(0.2, 5.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -142,7 +199,7 @@ tracks/1/path = NodePath("../Text2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.1, 4.9, 10.7),
+"times": PackedFloat32Array(0, 5.8, 10.7),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -154,7 +211,7 @@ tracks/2/path = NodePath("../Text3:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 10.7, 15.6),
+"times": PackedFloat32Array(0, 10.7, 15.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -166,7 +223,7 @@ tracks/3/path = NodePath("../Text4:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.1, 15.6, 20.4),
+"times": PackedFloat32Array(0, 16, 20.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [false, true, false]
@@ -178,16 +235,17 @@ tracks/4/path = NodePath("../Text5:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 20.4, 30),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 20.9),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [false, true, true]
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mseyt"]
 _data = {
 "RESET": SubResource("Animation_2ogx7"),
-"textAnimation": SubResource("Animation_w8gdj")
+"textAnimation": SubResource("Animation_10676"),
+"textAnimationEnd": SubResource("Animation_w8gdj")
 }
 
 [sub_resource type="GDScript" id="GDScript_e5cjv"]
@@ -237,9 +295,9 @@ libraries = {
 script = SubResource("GDScript_e5cjv")
 
 [node name="Text1" type="MarginContainer" parent="Sprite2D"]
-offset_left = -139.0
+offset_left = -177.0
 offset_top = 849.0
-offset_right = 2276.0
+offset_right = 2308.0
 offset_bottom = 1079.0
 scale = Vector2(0.913257, 0.905644)
 theme_override_constants/margin_left = 200
@@ -250,7 +308,7 @@ script = SubResource("GDScript_2m2my")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Le vaisseau survole la planète X, révélant des paysages éblouissants de cristaux étincelants et de vallées profondes couvertes d'une végétation luxuriante aux teintes chatoyantes."
+text = "Le vaisseau survole la planète Zorbor, révélant des paysages éblouissants de cristaux étincelants et de vallées profondes couvertes d'une végétation luxuriante aux teintes chatoyantes."
 uppercase = true
 
 [node name="Text2" type="MarginContainer" parent="Sprite2D"]
@@ -272,10 +330,10 @@ uppercase = true
 
 [node name="Text3" type="MarginContainer" parent="Sprite2D"]
 visible = false
-offset_left = -167.0
-offset_top = 816.0
-offset_right = 2277.0
-offset_bottom = 1063.0
+offset_left = 141.0
+offset_top = 824.0
+offset_right = 2585.0
+offset_bottom = 1071.0
 scale = Vector2(0.923124, 1.00227)
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
@@ -285,15 +343,16 @@ script = SubResource("GDScript_2m2my")
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
-text = "Le vaisseau éteint son moteur dans un silence inquiétant, laissant les explorateurs seuls avec les bruits étranges de la planète X, amplifiant leur sentiment d'isolement et d'étrangeté."
+text = "Le vaisseau éteint son moteur dans un silence inquiétant, laissant les explorateurs seuls avec les bruits étranges de la planète Zorbor,
+                                                                                         amplifiant leur sentiment d'isolement et d'étrangeté."
 uppercase = true
 
 [node name="Text4" type="MarginContainer" parent="Sprite2D"]
 visible = false
-offset_left = 155.0
-offset_top = 854.0
-offset_right = 2656.0
-offset_bottom = 1101.0
+offset_left = -77.0
+offset_top = 860.0
+offset_right = 2984.0
+offset_bottom = 1107.0
 scale = Vector2(0.687738, 0.837325)
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
@@ -302,16 +361,15 @@ script = SubResource("GDScript_2m2my")
 [node name="Label" type="Label" parent="Sprite2D/Text4"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Les explorateurs descendent prudemment du vaisseau, scrutant l'horizon avec curiosité et appréhension, alors que des formes étranges commencent à émerger des ombres environnantes."
 uppercase = true
 
 [node name="Text5" type="MarginContainer" parent="Sprite2D"]
-visible = false
-offset_left = 27.0
-offset_top = 813.0
-offset_right = 2831.0
-offset_bottom = 1060.0
+offset_left = 239.0
+offset_top = 823.0
+offset_right = 3775.0
+offset_bottom = 1070.0
 scale = Vector2(0.708548, 1.02233)
 theme_override_constants/margin_left = 200
 theme_override_constants/margin_right = 200
@@ -320,10 +378,9 @@ script = SubResource("GDScript_2m2my")
 [node name="Label" type="Label" parent="Sprite2D/Text5"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "Les explorateurs, armés de leur équipement, s'aventurent courageusement dans les paysages mystérieux de la planète X, impatients de découvrir ses secrets 
-
-cachés malgré la tension persistante avec les autochtones."
+theme_override_font_sizes/font_size = 25
+text = "Les explorateurs, armés de leur équipement, s'aventurent courageusement dans les paysages mystérieux de la planète Zorbor,
+                               impatients de découvrir ses secrets cachés malgré la tension persistante avec les autochtones."
 uppercase = true
 
 [node name="Timer" type="Timer" parent="."]
