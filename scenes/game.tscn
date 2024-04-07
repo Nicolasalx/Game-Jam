@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bll3necfs66r3"]
 
-[ext_resource type="PackedScene" uid="uid://b0j2c1m0omrma" path="res://scenes/map.tscn" id="1_1ueeq"]
+[ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
 [ext_resource type="PackedScene" uid="uid://ceinrvjdh7ke3" path="res://scenes/player.tscn" id="2_ev775"]
 [ext_resource type="PackedScene" uid="uid://bm1avs30idwg4" path="res://scripts/hoppy.tscn" id="3_m8d4b"]
 [ext_resource type="PackedScene" uid="uid://dwk10gc258n7n" path="res://water_generator.tscn" id="4_trgie"]
