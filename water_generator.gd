@@ -42,7 +42,6 @@ func _on_check_button_toggled(toggled_on):
 	generate_water = toggled_on
 
 func _on_button_pressed():
-	print("ENTER")
 	my_global.nb_water += available_water * 10
 	available_water = 0
 	text_nb_water.text = str(available_water)
