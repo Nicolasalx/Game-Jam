@@ -3,12 +3,16 @@ extends CharacterBody2D
 var target_positions = [Vector2(0, 0), Vector2(700, 600)]
 var current_target_index = 0
 var current_state = "idle"
-@onready var interaction_text = $InteractionText
+@onready var interaction_text1 = $InteractionText
+@onready var interaction_text2 = $InteractionText2
+@onready var interaction_text3 = $InteractionText3
 
 var speed = 200
 
 func _ready():
-	interaction_text.visible = false
+	interaction_text1.visible = false
+	interaction_text2.visible = false
+	interaction_text3.visible = false
 	position = Vector2(500, 800)
 	$AnimatedSprite2D.scale = Vector2(0.5, 0.5)
 	
@@ -49,19 +53,36 @@ func _on_Timer_timeout():
 
 func _input(event):
 	if event is InputEventKey and event.is_action_pressed("interact"):
-		open_water_menu()
-
-func open_water_menu():
-	pass
-
+		if my_global.mission == 0:
+			if my_global.nb_tomato >= 5:
+				my_global.nb_tomato -= 5
+				my_global.mission = 1
+				print("c'est bon")
+		elif my_global.mission == 1:
+			if my_global.nb_goute_deau >= 10:
+				my_global.nb_goute_deau -= 10
+				my_global.mission = 2
+				print("c'est bon 2")
 
 func _on_area_2d_area_entered(area):
-	interaction_text.visible = true
+	match my_global.mission:
+		0:
+			interaction_text1.visible = true
+			interaction_text2.visible = false
+			interaction_text3.visible = false
+		1:
+			interaction_text1.visible = false
+			interaction_text2.visible = true
+			interaction_text3.visible = false
+		2:
+			interaction_text1.visible = false
+			interaction_text2.visible = false
+			interaction_text3.visible = true
 
 func _on_area_2d_area_exited(area):
-	interaction_text.visible = false
-
+	interaction_text1.visible = false
+	interaction_text2.visible = false
+	interaction_text3.visible = false
 
 func _on_button_pressed():
-
 	pass

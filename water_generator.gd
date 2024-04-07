@@ -43,5 +43,6 @@ func _on_check_button_toggled(toggled_on):
 
 func _on_button_pressed():
 	my_global.nb_water += available_water * 10
+	my_global.nb_goute_deau += available_water * 10
 	available_water = 0
 	text_nb_water.text = str(available_water)
