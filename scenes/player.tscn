@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://u6fj0nbnef00"]
+[gd_scene load_steps=21 format=3 uid="uid://ceinrvjdh7ke3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_6tj5v"]
 [ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_lehcr"]
@@ -158,3 +158,4 @@ shape = SubResource("CapsuleShape2D_p8wne")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
