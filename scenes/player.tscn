@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://ceinrvjdh7ke3"]
+[gd_scene load_steps=25 format=3 uid="uid://ceinrvjdh7ke3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_6tj5v"]
 [ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_lehcr"]
+[ext_resource type="Script" path="res://scenes/health_bar.gd" id="3_4piku"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgsdq"]
 atlas = ExtResource("2_lehcr")
@@ -138,6 +139,14 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d0pjd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8yp6p"]
+bg_color = Color(0, 0.113725, 0.882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fsqbk"]
+bg_color = Color(0, 0.384314, 0.788235, 1)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8wne"]
 radius = 55.0
 height = 204.0
@@ -150,6 +159,35 @@ texture_filter = 1
 position = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_im6rx")
 animation = &"left"
+
+[node name="HealthBar" type="ProgressBar" parent="AnimatedSprite2D"]
+z_index = 1
+offset_left = -198.0
+offset_top = -146.0
+offset_right = 202.0
+offset_bottom = -116.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_d0pjd")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8yp6p")
+value = 100.0
+script = ExtResource("3_4piku")
+
+[node name="FillBar" type="ProgressBar" parent="AnimatedSprite2D/HealthBar"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_fsqbk")
+value = 100.0
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="AnimatedSprite2D/HealthBar"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 texture_filter = 1
