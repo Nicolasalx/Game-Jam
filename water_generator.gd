@@ -35,9 +35,5 @@ func _on_area_2d_area_exited(_area):
 	interaction_text.visible = false
 	is_close_to_generator = false
 
-
-func _on_check_button_button_down():
-	generate_water = false
-
-func _on_check_button_button_up():
-	generate_water = true
+func _on_check_button_toggled(toggled_on):
+	generate_water = toggled_on
