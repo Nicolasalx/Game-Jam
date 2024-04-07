@@ -109,8 +109,8 @@ offset_right = 160.0
 offset_bottom = 92.0
 text = "10"
 
-[node name="WaterIcon2" type="Sprite2D" parent="."]
-position = Vector2(230, -10)
+[node name="WaterIcon2" type="Sprite2D" parent="GeneratorPanel"]
+position = Vector2(155, 63)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_o4wti")
 
