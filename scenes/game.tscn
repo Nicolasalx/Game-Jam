@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://7geim0qsp175"]
+
+[ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
+[ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="2_ev775"]
+[ext_resource type="PackedScene" uid="uid://vs2bmkufahl0" path="res://scenes/aliens.tscn" id="3_7r56f"]
+
+[sub_resource type="Curve2D" id="Curve2D_2vcf7"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -96, -96, 0, 0, 0, 0, 2256, -96, 0, 0, 0, 0, 2256, 1344, 0, 0, 0, 0, -96, 1344, 0, 0, 0, 0, -96, -96)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_2vcf7")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(-96, -96)
+
+[node name="Map" parent="." instance=ExtResource("1_1ueeq")]
+
+[node name="Player" parent="." instance=ExtResource("2_ev775")]
+
+[node name="Aliens" parent="." instance=ExtResource("3_7r56f")]

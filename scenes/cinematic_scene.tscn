@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://bj05gwsqe21ht"]
+[gd_scene load_steps=15 format=3 uid="uid://bj05gwsqe21ht"]
 
+[ext_resource type="Script" path="res://scenes/cinematic_redirect.gd" id="1_4q56x"]
 [ext_resource type="AudioStream" uid="uid://bc4ydgwpqkimd" path="res://Kids.mp3" id="1_8j6qi"]
 [ext_resource type="Texture2D" uid="uid://cinkerib0qap" path="res://assets/vessel_landing_final.png" id="2_28vyf"]
 [ext_resource type="Script" path="res://cinematic.gd" id="3_ffflt"]
@@ -204,6 +205,7 @@ func _process(delta):
 [sub_resource type="GDScript" id="GDScript_2m2my"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_4q56x")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_8j6qi")
@@ -323,3 +325,5 @@ text = "Les explorateurs, armés de leur équipement, s'aventurent courageusemen
 
 cachés malgré la tension persistante avec les autochtones."
 uppercase = true
+
+[node name="Timer" type="Timer" parent="."]

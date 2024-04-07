@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3cwqqwc6i43e"]
+[gd_scene load_steps=7 format=3 uid="uid://d3cwqqwc6i43e"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_7jk7t"]
 [ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="4_bdok7"]
 [ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="4_oyoe5"]
+[ext_resource type="PackedScene" uid="uid://cmdbrx0lgoi2x" path="res://scenes/menuEngine.tscn" id="5_g72bh"]
 [ext_resource type="PackedScene" uid="uid://vs2bmkufahl0" path="res://scenes/aliens.tscn" id="5_k2i7h"]
 
 [sub_resource type="Curve2D" id="Curve2D_cs4b3"]
@@ -15,13 +16,19 @@ point_count = 5
 script = ExtResource("1_7jk7t")
 
 [node name="Path2D" type="Path2D" parent="."]
+visible = false
 curve = SubResource("Curve2D_cs4b3")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(-96, -96)
 
 [node name="Map" parent="." instance=ExtResource("4_bdok7")]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource("4_oyoe5")]
+visible = false
 
 [node name="Aliens" parent="." instance=ExtResource("5_k2i7h")]
+visible = false
+
+[node name="Control" parent="." instance=ExtResource("5_g72bh")]
