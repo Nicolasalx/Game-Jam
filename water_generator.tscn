@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwk10gc258n7n"]
+[gd_scene load_steps=7 format=3 uid="uid://bhft8pwyv6n3k"]
 
 [ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
 [ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
