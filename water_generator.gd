@@ -25,7 +25,7 @@ func _process(_delta):
 		progresse_bar.value += 0.05
 		if progresse_bar.value >= 100:
 			progresse_bar.value = 0
-			available_water += 10
+			available_water += 1
 			text_nb_water.text = str(available_water)
 	progresse_bar_extern.value = progresse_bar.value
 	progresse_bar_extern.get_parent().visible = generate_water
@@ -42,4 +42,7 @@ func _on_check_button_toggled(toggled_on):
 	generate_water = toggled_on
 
 func _on_button_pressed():
-	my_global.nb_water += available_water
+	print("ENTER")
+	my_global.nb_water += available_water * 10
+	available_water = 0
+	text_nb_water.text = str(available_water)
