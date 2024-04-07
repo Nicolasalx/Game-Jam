@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwk10gc258n7n"]
+[gd_scene load_steps=7 format=3 uid="uid://df44k5dbcccoi"]
 
 [ext_resource type="Script" path="res://water_generator.gd" id="1_3ibux"]
 [ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
@@ -12,10 +12,10 @@ size = Vector2(145, 121)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lq1ej"]
 bg_color = Color(0, 0.521569, 0.776471, 1)
 
-[node name="Node2D4" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = ExtResource("1_3ibux")
 
-[node name="WaterGenerator" type="Sprite2D" parent="."]
+[node name="WaterExtractor" type="Sprite2D" parent="."]
 texture = ExtResource("1_i8ddh")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -34,7 +34,7 @@ offset_bottom = 90.0
 grow_horizontal = 2
 text = "Press f to interacte"
 
-[node name="GeneratorPanel" type="Panel" parent="."]
+[node name="WaterPanel" type="Panel" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -47,14 +47,14 @@ offset_bottom = 73.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CheckButton" type="CheckButton" parent="GeneratorPanel"]
+[node name="CheckButton" type="CheckButton" parent="WaterPanel"]
 layout_mode = 0
 offset_left = 170.0
 offset_top = 20.0
 offset_right = 214.0
 offset_bottom = 44.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="GeneratorPanel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="WaterPanel"]
 layout_mode = 0
 offset_left = 18.0
 offset_top = 18.0
@@ -62,12 +62,12 @@ offset_right = 162.0
 offset_bottom = 44.0
 text = "Water extraction"
 
-[node name="WaterIcon" type="Sprite2D" parent="GeneratorPanel"]
+[node name="WaterIcon" type="Sprite2D" parent="WaterPanel"]
 position = Vector2(213, 101)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_o4wti")
 
-[node name="MiningBar" type="ProgressBar" parent="GeneratorPanel/WaterIcon"]
+[node name="MiningBar" type="ProgressBar" parent="WaterPanel/WaterIcon"]
 offset_left = -490.0
 offset_top = -25.0
 offset_right = -53.0
@@ -95,4 +95,5 @@ value = 50.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="toggled" from="GeneratorPanel/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="button_down" from="WaterPanel/CheckButton" to="." method="_on_check_button_button_down"]
+[connection signal="button_up" from="WaterPanel/CheckButton" to="." method="_on_check_button_button_up"]

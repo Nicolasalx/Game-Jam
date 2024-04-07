@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var target_positions = [Vector2(0, 0), Vector2(700, 600)]
 var current_target_index = 0
-var is_close_to_generator = false
 var current_state = "idle"
 @onready var interaction_text = $InteractionText
 
@@ -28,7 +27,6 @@ func move_towards_target(delta):
 	if position.distance_to(target_positions[current_target_index]) < 5:
 		velocity = Vector2.ZERO
 		current_state = "idle"
-		interaction_text.visible = true
 		set_idle_timer()
 		
 	if current_state == "idle":
@@ -54,5 +52,16 @@ func _input(event):
 		open_water_menu()
 
 func open_water_menu():
-	print("water --")
+	pass
+
+
+func _on_area_2d_area_entered(area):
+	interaction_text.visible = true
+
+func _on_area_2d_area_exited(area):
+	interaction_text.visible = false
+
+
+func _on_button_pressed():
+
 	pass

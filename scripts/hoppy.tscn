@@ -1,0 +1,86 @@
+[gd_scene load_steps=13 format=3 uid="uid://bm1avs30idwg4"]
+
+[ext_resource type="Script" path="res://hoppy.gd" id="1_kyt8y"]
+[ext_resource type="Texture2D" uid="uid://dhawwx5r3lvk4" path="res://fonts/Cat-2-Walk.png" id="2_c4mo0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jmjo"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mso2v"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yc0ht"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuntq"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8nteq"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(200, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87wpe"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(250, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwswk"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(300, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w8ow"]
+atlas = ExtResource("2_c4mo0")
+region = Rect2(350, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bgjp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jmjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mso2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yc0ht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuntq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8nteq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87wpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwswk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1w8ow")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pseul"]
+size = Vector2(20, 16)
+
+[node name="hoppy" type="CharacterBody2D"]
+script = ExtResource("1_kyt8y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bgjp1")
+animation = &"right"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_pseul")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

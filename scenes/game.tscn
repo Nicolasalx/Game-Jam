@@ -1,25 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://7geim0qsp175"]
+[gd_scene load_steps=6 format=3 uid="uid://bll3necfs66r3"]
 
-[ext_resource type="PackedScene" uid="uid://csdrqq28sdpot" path="res://scenes/map.tscn" id="1_1ueeq"]
-[ext_resource type="PackedScene" uid="uid://u6fj0nbnef00" path="res://scenes/player.tscn" id="2_ev775"]
-[ext_resource type="PackedScene" path="res://scenes/aliens.tscn" id="3_7r56f"]
+[ext_resource type="PackedScene" uid="uid://6xfn71l5ecpl" path="res://scenes/map.tscn" id="1_1ueeq"]
+[ext_resource type="PackedScene" uid="uid://ceinrvjdh7ke3" path="res://scenes/player.tscn" id="2_ev775"]
+[ext_resource type="PackedScene" uid="uid://bm1avs30idwg4" path="res://scripts/hoppy.tscn" id="3_m8d4b"]
+[ext_resource type="PackedScene" uid="uid://dwk10gc258n7n" path="res://water_generator.tscn" id="4_trgie"]
+[ext_resource type="PackedScene" uid="uid://dvi361057dogf" path="res://npc.tscn" id="5_8crjy"]
 
-[sub_resource type="Curve2D" id="Curve2D_2vcf7"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -96, -96, 0, 0, 0, 0, 2256, -96, 0, 0, 0, 0, 2256, 1344, 0, 0, 0, 0, -96, 1344, 0, 0, 0, 0, -96, -96)
-}
-point_count = 5
-
-[node name="Game" type="Node2D"]
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_2vcf7")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-96, -96)
+[node name="game" type="Node2D"]
 
 [node name="Map" parent="." instance=ExtResource("1_1ueeq")]
 
 [node name="Player" parent="." instance=ExtResource("2_ev775")]
 
-[node name="Aliens" parent="." instance=ExtResource("3_7r56f")]
+[node name="hoppy" parent="." instance=ExtResource("3_m8d4b")]
+
+[node name="Node2D2" parent="." instance=ExtResource("4_trgie")]
+
+[node name="npc" parent="." instance=ExtResource("5_8crjy")]
