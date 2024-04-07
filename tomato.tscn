@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cultwlaoacuoe"]
 
-[ext_resource type="Texture2D" uid="uid://sxkga6godwwl" path="res://assets/water_generator.png" id="1_i8ddh"]
 [ext_resource type="Script" path="res://tomato.gd" id="1_pv5kl"]
+[ext_resource type="Texture2D" uid="uid://cpr3f7g2eay8p" path="res://fonts/-etomate_tree.png" id="2_axrgl"]
 [ext_resource type="Texture2D" uid="uid://bh4y2lgdkxrti" path="res://fonts/tomato.png" id="4_1nerr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sco5i"]
@@ -23,7 +23,8 @@ bg_color = Color(0.211765, 0.211765, 0.211765, 1)
 script = ExtResource("1_pv5kl")
 
 [node name="TomatoExtractor" type="Sprite2D" parent="."]
-texture = ExtResource("1_i8ddh")
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("2_axrgl")
 
 [node name="Area2D" type="Area2D" parent="."]
 
