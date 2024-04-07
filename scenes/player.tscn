@@ -162,13 +162,14 @@ animation = &"left"
 
 [node name="HealthBar" type="ProgressBar" parent="AnimatedSprite2D"]
 z_index = 1
-offset_left = -198.0
-offset_top = -146.0
-offset_right = 202.0
-offset_bottom = -116.0
+offset_left = -106.0
+offset_top = -129.0
+offset_right = 94.0
+offset_bottom = -114.0
 theme_override_styles/background = SubResource("StyleBoxEmpty_d0pjd")
 theme_override_styles/fill = SubResource("StyleBoxFlat_8yp6p")
 value = 100.0
+show_percentage = false
 script = ExtResource("3_4piku")
 
 [node name="FillBar" type="ProgressBar" parent="AnimatedSprite2D/HealthBar"]
