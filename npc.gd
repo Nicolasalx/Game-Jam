@@ -17,7 +17,7 @@ func _ready():
 	interaction_text2.visible = false
 	interaction_text3.visible = false
 	position = Vector2(500, 800)
-	$AnimatedSprite2D.scale = Vector2(0.5, 0.5)
+	$AnimatedSprite2D.scale = Vector2(2.5, 2.5)
 	
 	current_state = "walking"
 	set_process_input(true)
