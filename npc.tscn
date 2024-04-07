@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ddi1ahpy3j0cf"]
+[gd_scene load_steps=22 format=3 uid="uid://cc81de5qxjgwh"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_yisei"]
 [ext_resource type="Texture2D" uid="uid://63rfl48jh1qu" path="res://fonts/character.png" id="2_36nb4"]
@@ -178,15 +178,32 @@ offset_top = -40.0
 offset_right = 224.0
 offset_bottom = 10.0
 grow_horizontal = 2
-text = "Donnes-moi 5 goutes d'eau"
+text = "Donnes-moi 5 tomatos"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="InteractionText"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "1 tomate"
+[node name="InteractionText2" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 224.0
+offset_bottom = 10.0
+grow_horizontal = 2
+text = "donnes-moi 10 goutes d'eau"
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractionText3" type="RichTextLabel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 24.0
+offset_top = -40.0
+offset_right = 224.0
+offset_bottom = 10.0
+grow_horizontal = 2
+text = "bienvenue chez nous!"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="pressed" from="InteractionText/Button" to="." method="_on_button_pressed"]
